@@ -1,0 +1,7 @@
+<h1>Blog一覧</h1>
+
+<% @blogs.each do |blog| %>
+  <p><%= blog.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+  <p><%= blog.title %></p>
+  <p><%= blog.content %></p>
+<% end %>
