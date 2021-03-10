@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: %i[ show edit update destroy ]
 
   def index
     @blogs = Blog.all
@@ -19,6 +19,17 @@ class BlogsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @blog.update(blog_params)
+      redirect_to blog_path(@blog.id), notice: "編集しました"
+    else
+      render :edit, notice: "編集出来ませんでした"
+    end
   end
 
 private

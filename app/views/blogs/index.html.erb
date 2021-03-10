@@ -6,4 +6,5 @@
   <p><%= blog.title %></p>
   <p><%= blog.content %></p>
   <%= link_to "show", blog_path(blog.id) %>
+  <%= link_to "edit", edit_blog_path(blog.id) %>
 <% end %>
